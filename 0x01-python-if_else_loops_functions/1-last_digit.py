@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import random
-
 number = random.randint(-10000, 10000)
 last_digit = abs(number) % 10
 
@@ -13,8 +12,10 @@ additional_info = {
 if last_digit > 5:
     additional_info[last_digit] = "and is greater than 5"
 else:
-    default_info = additional_info[5]
-    additional_info[last_digit] = additional_info.get(last_digit, default_info)
+    if number < 0:
+        additional_info[last_digit] = "and is less than 6 and not 0"
+    else:
+        final_info = additional_info.get(last_digit, additional_info[5])
 
 final_info = additional_info[last_digit]
 print(f"Last digit of {last_digit_str} {final_info}")
