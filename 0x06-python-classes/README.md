@@ -1,1 +1,1 @@
-0x06-python-classes projects
+0x06-python-classes project & tasks
